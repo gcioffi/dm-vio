@@ -168,6 +168,7 @@ public:
 
 		// load timestamps if possible.
 		loadTimestamps();
+
 		printf("ImageFolderReader: got %d files in %s!\n", (int)files.size(), path.c_str());
 
 	}
@@ -279,7 +280,7 @@ public:
             }
         }
 		double distSeconds = (double) dist * 1e-9;
-        std::cout << "GTData distance (seconds): " << distSeconds << std::endl;
+        // std::cout << "GTData distance (seconds): " << distSeconds << std::endl;
         if(distSeconds > 0.01)
         {
             return dmvio::GTData{};
@@ -442,8 +443,7 @@ public:
         {
             std::cout << "Found no IMU-data." << std::endl;
         }
-
-
+		
         imuStream.close();
 
     }
